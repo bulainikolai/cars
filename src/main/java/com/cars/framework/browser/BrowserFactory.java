@@ -21,9 +21,7 @@ public final class BrowserFactory {
     private static WebDriver initBrowser() {
         Logger.info("init browser in BrowserFactory");
         WebDriver instance;
-
-        String nameOfBrowser = ReadProperty.readValueProp("browserName");
-        switch (nameOfBrowser) {
+        switch (System.getProperty("browser")) {
             case "fireFox":
                 Logger.info("init fireFox browser in BrowserFactory");
                 WebDriverManager.firefoxdriver().setup();
