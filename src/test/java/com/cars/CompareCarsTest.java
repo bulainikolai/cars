@@ -7,9 +7,16 @@ import com.cars.framework.utils.Logger;
 import com.cars.framework.utils.ReadProperty;
 import org.testng.Assert;
 import org.testng.annotations.Test;
+import io.qameta.allure.Description;
+import io.qameta.allure.Severity;
+import io.qameta.allure.SeverityLevel;
+import io.qameta.allure.Story;
 
 public class CompareCarsTest extends BaseTest {
-    @Test
+    @Test(description = "Title: test for downloading SteamSetup")
+    @Severity(SeverityLevel.NORMAL)
+    @Description("Description: One test for downloading SteamSetup")
+    @Story("Story name: To check is file load")
     public void compareCars() {
         Logger.step(1, "Open https://www.cars.com");
         MainPage mainPage = new MainPage();
@@ -17,7 +24,7 @@ public class CompareCarsTest extends BaseTest {
         Assert.assertTrue(mainPage.isDisplayed(), "We did't get main page");
 
         Logger.step(2, "Go to page Research");
-//        mainPage.getTopMainMenu().clickCategory("Research");
+        mainPage.getTopMainMenu().clickCategory("Sell Your Car");
 
 //        boolean isCompareTrimsButtonPresent = false;
 //        CarCommonInfoPage carCommonInfoPage = null;

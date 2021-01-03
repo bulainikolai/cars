@@ -2,6 +2,7 @@ package com.cars.framework.forms;
 
 import com.cars.framework.elements.Label;
 import com.cars.framework.utils.Logger;
+import io.qameta.allure.Step;
 import org.openqa.selenium.By;
 
 public abstract class BaseForm {
@@ -19,6 +20,7 @@ public abstract class BaseForm {
         return new Label(uniqueElementLocator, "label of form").getText().trim();
     }
 
+    @Step("Method: Check correct language")
     public boolean isDisplayed() {
         Logger.info("check is " + nameOfForm + " in BaseForm");
         return new Label(uniqueElementLocator, "label of form").isPresent();

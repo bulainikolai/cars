@@ -3,6 +3,7 @@ package com.cars.application.menu;
 import com.cars.framework.elements.Button;
 import com.cars.framework.forms.BaseForm;
 import com.cars.framework.utils.Logger;
+import io.qameta.allure.Step;
 import org.openqa.selenium.By;
 
 public class TopMainMenu extends BaseForm {
@@ -17,6 +18,7 @@ public class TopMainMenu extends BaseForm {
         super(UNIQUE_ELEMENT_LOCATOR, "MainMenu");
     }
 
+    @Step("We click: {0}")
     public void clickCategory(String category) {
         Logger.info("select category - " + category + " and click on it in MainMenu");
         categoryMenu = new Button(By.xpath(String.format("%s%s%s", FIRST_PART_CATEGORY_LOCATOR, category, LAST_PART_CATEGORY_LOCATOR)), "Button-" + category);
